@@ -1,0 +1,29 @@
+p {
+	color: blue;
+}
+
+.app-container {
+	background-color: beige;
+	padding: 20px;
+}
+
+.dispari {
+	background-color: rgb(174, 129, 216) !important;
+}
+
+.pari {
+	background-color: rgb(225, 180, 162);
+}
+
+.box-status {
+	min-width: 200px;
+	min-height: 200px;
+}
+
+.verde {
+	background-color: green;
+}
+
+.rosso {
+	background-color: red;
+}

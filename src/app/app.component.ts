@@ -6,5 +6,35 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'cags-app';
+  nomeComponente: string = "app";
+  title = `Ciao`;
+  meteo: string = 'sole';
+  checkBoxValue: boolean = false;
+  frutti: {name: string, desc: string }[] = [{
+    name: 'mela',
+    desc: 'La mela è buona'
+  },
+  {
+    name: 'banana',
+    desc: 'La banana è gialla'
+  },
+  {
+    name: 'kiwi',
+    desc: 'Il kiwi è tondo'
+  },
+  {
+    name: 'pesca',
+    desc: 'La pesca è grande'
+  }];
+
+  // testA = 'ciao',
+  // testB = 'asdasdas'
+
+  switchProp = 'gatto';
+  online: boolean = false;
+
+  constructor() {
+    this.title = `Ciao sono l'${this.nomeComponente} component`
+    // this.title = "Ciao " + this.nomeComponente + " sono l'app component";
+  }
 }

@@ -1,0 +1,12 @@
+<div class="test-container">
+<h1>Test Component</h1>
+    <p>Valore di meteo nel test component: {{meteo}}</p>
+    <img [src]="tempoUrl" width="256px" height="256px">
+    <button (click)="change()">Cambia l'immagine</button>
+    
+    <input type="text" [(ngModel)]="valore" />
+    <!-- <input type="text" [value]="valore" (input)="valore = $event.target.value" /> -->
+    
+    
+    <!-- <sottotest-component></sottotest-component> -->
+</div>
