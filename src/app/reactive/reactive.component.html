@@ -9,7 +9,9 @@
     </p>
   <p>
     <label for="password">Password: </label>
-    <input type="password" formControlName="password" id="password" autocomplete="off">
+    <input type="text" formControlName="password" id="password" autocomplete="off">
+    <span class="error-property" *ngIf="loginForm.get('password')?.touched && loginForm.get('password')?.errors?.['regExpInvalid']">La password deve contere solo numeri</span>
+
   </p>
   <button type="submit" [disabled]="loginForm.invalid">SUBMIT</button>
 </form>
