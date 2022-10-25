@@ -5,3 +5,8 @@ form input.ng-invalid.ng-dirty {
 .error-property {
     background-color: orange;
 }
+
+.streets-container {
+    display: flex;
+    flex-direction: row;
+}

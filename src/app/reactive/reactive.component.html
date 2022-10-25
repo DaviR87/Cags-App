@@ -11,7 +11,27 @@
     <label for="password">Password: </label>
     <input type="text" formControlName="password" id="password" autocomplete="off">
     <span class="error-property" *ngIf="loginForm.get('password')?.touched && loginForm.get('password')?.errors?.['regExpInvalid']">La password deve contere solo numeri</span>
-
   </p>
+  <p>
+    <label for="start">Start Date: </label>
+    <input type="date" formControlName="start" id="start">
+  </p>
+  <p>
+    <label for="end">End Date: </label>
+    <input type="date" formControlName="end" id="end">
+  </p>
+  <p>
+    <label for="isadmin">Is Admin: </label>
+    <input type="checkbox" formControlName="isAdmin" id="isadmin">
+  </p>
+  <button type="button" (click)="addStreet()">Add street</button>
+  <div class="streets-container" formArrayName="streets" *ngFor="let control of loginForm.get('streets')['controls']; let i = index">
+    <div>
+      <label>Streets </label>
+      <input type="text" [formControl]="control">
+    </div>
+  </div>
+  <br>
+  <br>
   <button type="submit" [disabled]="loginForm.invalid">SUBMIT</button>
 </form>
