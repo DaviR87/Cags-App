@@ -1,5 +1,16 @@
-<div class="login-container">
+<select [(ngModel)]="tipoDiForm">
+    <option [ngValue]="'templateDriven'">Template Driven</option>
+    <option [ngValue]="'reactive'">Reactive</option>
+</select>
+
+{{ tipoDiForm }}
+
+<div *ngIf="tipoDiForm === 'templateDriven'" class="login-container">
     <app-login></app-login>
+</div>
+
+<div *ngIf="tipoDiForm === 'reactive'">
+    <app-reactive></app-reactive>
 </div>
 
 <div class="app-container">

@@ -33,6 +33,8 @@ export class AppComponent {
   switchProp = 'gatto';
   online: boolean = false;
 
+  tipoDiForm: string = 'reactive';
+
   constructor() {
     this.title = `Ciao sono l'${this.nomeComponente} component`
     // this.title = "Ciao " + this.nomeComponente + " sono l'app component";
