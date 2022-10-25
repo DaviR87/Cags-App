@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-reactive',
@@ -7,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ReactiveComponent implements OnInit {
 
-  constructor() { }
+  loginForm: FormGroup;
+
+  constructor() {
+    this.loginForm = new FormGroup({
+      username: new FormControl('', Validators.minLength(5)),
+      password: new FormControl('', [Validators.required, Validators.minLength(8)])
+    })
+  }
 
   ngOnInit(): void {
+  }
+
+  gestisciDati() {
+    console.log('Dati mandati');
   }
 
 }

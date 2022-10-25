@@ -1,1 +1,13 @@
-<p>reactive works!</p>
+<h1>Reactive Form</h1>
+
+<form [formGroup]="loginForm" (ngSubmit)="gestisciDati()">
+  <p>
+    <label for="username">Username: </label>
+    <input type="text" formControlName="username" id="username" autocomplete="off">
+  </p>
+  <p>
+    <label for="password">Password: </label>
+    <input type="password" formControlName="password" id="password" autocomplete="off">
+  </p>
+  <button type="submit" [disabled]="loginForm.invalid">SUBMIT</button>
+</form>
