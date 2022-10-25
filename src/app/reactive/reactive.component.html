@@ -4,7 +4,9 @@
   <p>
     <label for="username">Username: </label>
     <input type="text" formControlName="username" id="username" autocomplete="off">
-  </p>
+      <span class="error-property" *ngIf="loginForm.get('username')?.touched && loginForm.get('username')?.errors?.['required']">Lo username è obbligatorio</span>
+      <span class="error-property" *ngIf="loginForm.get('username')?.touched && loginForm.get('username')?.errors?.['minlength']">Lo username dev'essere lungo almeno {{ loginForm.get('username')?.errors?.['minlength']['requiredLength'] }}</span>
+    </p>
   <p>
     <label for="password">Password: </label>
     <input type="password" formControlName="password" id="password" autocomplete="off">

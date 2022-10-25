@@ -20,6 +20,9 @@ export class LoginComponent implements OnInit {
 
   nome: string = 'pippo';
 
+  // Only numbers RegExp
+  public miaRegularExp: RegExp = new RegExp(/^\d+$/)
+
   constructor() { }
 
   ngOnInit(): void {

@@ -7,12 +7,14 @@ import { AppComponent } from './app.component';
 import { TestModule } from './test/test.module';
 import { LoginComponent } from './login/login.component';
 import { ReactiveComponent } from './reactive/reactive.component';
+import { RegexValidatorDirective } from './regex-validator.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     ReactiveComponent,
+    RegexValidatorDirective,
   ],
   imports: [
     TestModule,

@@ -9,10 +9,11 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 export class ReactiveComponent implements OnInit {
 
   loginForm: FormGroup;
+  usernameMinLength: number = 5;
 
   constructor() {
     this.loginForm = new FormGroup({
-      username: new FormControl('', Validators.minLength(5)),
+      username: new FormControl('', [Validators.required, Validators.minLength(this.usernameMinLength)]),
       password: new FormControl('', [Validators.required, Validators.minLength(8)])
     })
   }
@@ -21,7 +22,7 @@ export class ReactiveComponent implements OnInit {
   }
 
   gestisciDati() {
-    console.log('Dati mandati');
+    console.log(this.loginForm);
   }
 
 }

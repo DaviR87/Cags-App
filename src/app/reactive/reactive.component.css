@@ -1,0 +1,7 @@
+form input.ng-invalid.ng-dirty {
+    border: 1px solid red;
+}
+
+.error-property {
+    background-color: orange;
+}

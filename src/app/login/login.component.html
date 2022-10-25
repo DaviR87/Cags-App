@@ -17,7 +17,8 @@
           autocomplete="off"
           name="password"
           [(ngModel)]="user.password"
-          required>
+          required
+          [appRegexValidator]="miaRegularExp">
   </p>
   <button type="submit" [disabled]="loginForm.invalid">SUBMIT DATA</button>
 </form>
