@@ -2,6 +2,11 @@ p {
 	color: blue;
 }
 
+.login-container {
+	background-color: rgb(147, 180, 238);
+	padding: 20px;
+}
+
 .app-container {
 	background-color: beige;
 	padding: 20px;

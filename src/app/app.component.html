@@ -1,3 +1,7 @@
+<div class="login-container">
+    <app-login></app-login>
+</div>
+
 <div class="app-container">
     {{ title }}
     <br>
@@ -7,11 +11,12 @@
     <input type="checkbox" [(ngModel)]="checkBoxValue">
     <br>
     <br>
-    <span>Il valore dell'input è: {{ meteo }}</span>
+    <p>Il valore dell'input è: {{ meteo }}</p>
+    <p>Scrivendo pioggia, il componente figlio (test) reagirà di conseguenza</p>
     <br>
     <input type="text" [(ngModel)]="meteo">
     <br><br>
-    <app-test *ngIf="false" [meteo]="meteo" [altroInput]="'test altro input'"></app-test>
+    <app-test *ngIf="checkBoxValue" [meteo]="meteo" [altroInput]="'test altro input'"></app-test>
 
     <ng-container *ngIf="checkBoxValue; then onlineBlock else offlineBlock"></ng-container>
 

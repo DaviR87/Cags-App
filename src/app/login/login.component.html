@@ -1,0 +1,29 @@
+<h1>Login Component</h1>
+
+<form #loginForm="ngForm" (ngSubmit)="gestisciDati(loginForm)">
+  <p>
+    <label for="username">Username: </label>
+    <input id="username"
+            type="text"
+            autocomplete="off"
+            name="username"
+            [(ngModel)]="user.username"
+            required>
+  </p>
+  <p>
+    <label for="password">Password: </label>
+    <input id="password"
+          type="password"
+          autocomplete="off"
+          name="password"
+          [(ngModel)]="user.password"
+          required>
+  </p>
+  <button type="submit" [disabled]="loginForm.invalid">SUBMIT DATA</button>
+</form>
+
+<pre>{{ user | json }}</pre>
+
+<p>
+  {{ nome }}
+</p>
