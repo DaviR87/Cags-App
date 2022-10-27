@@ -1,3 +1,7 @@
+<ul>
+    <li *ngFor="let product of prodotti"> {{ product.name }}</li>
+</ul>
+<hr>
 <select [(ngModel)]="tipoDiForm">
     <option [ngValue]="'templateDriven'">Template Driven</option>
     <option [ngValue]="'reactive'">Reactive</option>

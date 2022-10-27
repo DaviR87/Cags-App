@@ -1,5 +1,7 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, DoCheck, Input, OnChanges, OnDestroy, OnInit, SimpleChanges } from '@angular/core';
 import { interval } from 'rxjs';
+import { MyCustomService } from '../my-custom.service';
 
 @Component({
   selector: 'app-test',
@@ -16,7 +18,12 @@ export class TestComponent implements OnInit, DoCheck, OnChanges, OnDestroy {
     console.log(val);
   });
 
-  constructor() {
+  loggato: boolean = false;
+
+  constructor(
+    private myService: MyCustomService,
+    private http: HttpClient   
+    ) {
     console.log("Test constructor");
    }
 
@@ -31,6 +38,7 @@ export class TestComponent implements OnInit, DoCheck, OnChanges, OnDestroy {
 
   ngOnInit(): void {
     console.log("Test init");
+    this.loggato = this.myService.isLogged();
   }
 
   ngDoCheck(): void {

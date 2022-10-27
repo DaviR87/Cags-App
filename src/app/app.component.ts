@@ -1,4 +1,13 @@
+import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
+import { finalize } from 'rxjs';
+
+export interface Product {
+  id: number,
+  inStock: boolean,
+  name: string,
+  price: number
+}
 
 @Component({
   selector: 'app-root',
@@ -10,7 +19,7 @@ export class AppComponent {
   title = `Ciao`;
   meteo: string = 'sole';
   checkBoxValue: boolean = false;
-  frutti: {name: string, desc: string }[] = [{
+  frutti: { name: string, desc: string }[] = [{
     name: 'mela',
     desc: 'La mela è buona'
   },
@@ -35,8 +44,46 @@ export class AppComponent {
 
   tipoDiForm: string = 'reactive';
 
-  constructor() {
+  prodotti: Product[] = [];
+
+  loader: boolean = false;
+
+  constructor(private http: HttpClient) {
     this.title = `Ciao sono l'${this.nomeComponente} component`
     // this.title = "Ciao " + this.nomeComponente + " sono l'app component";
+
+    http.get<Product[]>('http://localhost:3000').subscribe(
+      (response: Product[]) => {
+        console.log(response);
+        this.prodotti = response;
+      },
+      error => {
+        console.log(error)
+      },
+      () => {
+        console.log("i'm completed")
+      })
+
+    this.getData();
+  }
+
+  getData() {
+    this.loader = true;
+    this.http.get<Product[]>('http://localhost:3000/products')
+    .pipe(
+      finalize(() => this.loader = false)
+    )
+    .subscribe({
+      next: (response: Product[]) => {
+        console.log('next');
+        this.prodotti = response;
+      },
+      error: (e) => {
+        console.error(e)
+      },
+      complete: () => {
+        console.info('complete');
+      }
+    })
   }
 }
