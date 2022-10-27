@@ -56,17 +56,17 @@ export class AppComponent {
     this.title = `Ciao sono l'${this.nomeComponente} component`
     // this.title = "Ciao " + this.nomeComponente + " sono l'app component";
 
-    http.get<Product[]>('http://localhost:3000').subscribe(
-      (response: Product[]) => {
-        console.log(response);
-        this.prodotti = response;
-      },
-      error => {
-        console.log(error)
-      },
-      () => {
-        console.log("i'm completed")
-      })
+    // http.get<Product[]>('http://localhost:3000').subscribe(
+    //   (response: Product[]) => {
+    //     console.log(response);
+    //     this.prodotti = response;
+    //   },
+    //   error => {
+    //     console.log(error)
+    //   },
+    //   () => {
+    //     console.log("i'm completed")
+    //   })
 
     this.getData();
   }
