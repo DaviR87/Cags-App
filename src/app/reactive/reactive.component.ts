@@ -58,7 +58,7 @@ export class ReactiveComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
+    console.log('Reactive form inizializzato')
   }
 
   addStreet() {

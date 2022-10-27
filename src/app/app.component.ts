@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { finalize } from 'rxjs';
 
 export interface Product {
@@ -48,7 +49,10 @@ export class AppComponent {
 
   loader: boolean = false;
 
-  constructor(private http: HttpClient) {
+  constructor(
+    private http: HttpClient,
+    public router: Router
+    ) {
     this.title = `Ciao sono l'${this.nomeComponente} component`
     // this.title = "Ciao " + this.nomeComponente + " sono l'app component";
 
@@ -85,5 +89,9 @@ export class AppComponent {
         console.info('complete');
       }
     })
+  }
+
+  goToNews() {
+    this.router.navigate(['/news']);
   }
 }

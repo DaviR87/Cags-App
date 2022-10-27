@@ -1,3 +1,13 @@
+.navbar {
+	display: flex;
+	flex-direction: row;
+	margin: 10px;
+}
+
+.active {
+	background-color: aqua;	
+}
+
 p {
 	color: blue;
 }

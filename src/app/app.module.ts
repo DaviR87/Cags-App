@@ -9,13 +9,17 @@ import { TestModule } from './test/test.module';
 import { LoginComponent } from './login/login.component';
 import { ReactiveComponent } from './reactive/reactive.component';
 import { RegexValidatorDirective } from './regex-validator.directive';
+import { HomeComponent } from './home/home.component';
+import { NewsComponent } from './news/news.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     ReactiveComponent,
-    RegexValidatorDirective
+    RegexValidatorDirective,
+    HomeComponent,
+    NewsComponent
   ],
   imports: [
     TestModule,

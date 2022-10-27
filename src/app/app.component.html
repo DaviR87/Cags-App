@@ -1,3 +1,10 @@
+<div class="navbar">
+    <a routerLink="/home" routerLinkActive="active">HOME</a>
+    <a routerLink="/news" routerLinkActive="active">NEWS</a>
+</div>
+<button (click)="goToNews()">NEWS</button>
+
+<router-outlet></router-outlet>
 <ul>
     <li *ngFor="let product of prodotti"> {{ product.name }}</li>
 </ul>
@@ -54,12 +61,6 @@
         <hr>
     </div>
 
-    <!-- <ul>
-        <li *ngFor="let frutto of frutti">
-            {{ frutto.name }}
-        </li>
-    </ul> -->
-
     <ul [ngSwitch]="switchProp">
         <li *ngSwitchCase="'cane'">Cane</li>
         <li *ngSwitchCase="'gatto'">Gatto bianco</li>
@@ -72,5 +73,5 @@
         <span>STATUS</span>
     </div>
 
-    <router-outlet></router-outlet>
+    
 </div>
